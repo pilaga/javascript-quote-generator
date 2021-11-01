@@ -1,11 +1,11 @@
-const quoteContainer = document.getElementById('quote-container');
-const quoteText = document.getElementById('quote');
-const authorText = document.getElementById('author');
-const twitterBtn = document.getElementById('twitter');
-const newQuoteBtn = document.getElementById('new-quote');
-const loaderContainer = document.getElementById('loader');
+const quoteContainer = document.getElementById('quote-container')! as HTMLDivElement;
+const quoteText = document.getElementById('quote')! as HTMLSpanElement;
+const authorText = document.getElementById('author')! as HTMLSpanElement;
+const twitterBtn = document.getElementById('twitter')! as HTMLButtonElement;
+const newQuoteBtn = document.getElementById('new-quote')! as HTMLButtonElement;
+const loaderContainer = document.getElementById('loader')! as HTMLDivElement;
 
-let apiQuotes = [];
+let apiQuotes: {text: string, author: string}[] = [];
 
 //show loading
 function dataLoading() {
