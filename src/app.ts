@@ -8,19 +8,19 @@ const loaderContainer = document.getElementById('loader')! as HTMLDivElement;
 let apiQuotes: {text: string, author: string}[] = [];
 
 //show loading
-function dataLoading() {
+function dataLoading(): void {
     loaderContainer.hidden = false;
     quoteContainer.hidden = true;
 }
 
 //hide loading
-function dataComplete() {
+function dataComplete(): void {
     loaderContainer.hidden = true;
     quoteContainer.hidden = false;
 }
 
 //show new quote
-function showNewQuote() {
+function showNewQuote(): void {
     dataLoading();
 
     const quote = apiQuotes[Math.floor(Math.random() * apiQuotes.length)];
@@ -44,7 +44,7 @@ function showNewQuote() {
 }
 
 //get quotes from API
-async function getQuotes() {
+async function getQuotes(): Promise<void> {
     dataLoading();
     const apiUrl = "https://type.fit/api/quotes";
     try {
@@ -55,7 +55,7 @@ async function getQuotes() {
 }
 
 //tweet quote
-function tweetQuote() {
+function tweetQuote(): void {
     const twitterUrl = `https://twitter.com/intent/tweet?text=${quoteText.textContent} - ${authorText.textContent}`;
     window.open(twitterUrl, '_blank');
 }
