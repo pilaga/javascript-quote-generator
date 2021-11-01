@@ -22,7 +22,7 @@ function dataComplete() {
 //show new quote
 function showNewQuote() {
     dataLoading();
-    
+
     const quote = apiQuotes[Math.floor(Math.random() * apiQuotes.length)];
     
     //handle author text
@@ -46,7 +46,7 @@ function showNewQuote() {
 //get quotes from API
 async function getQuotes() {
     dataLoading();
-    const apiUrl = 'https:/type.fit/api/quotes';
+    const apiUrl = 'https://type.fit/api/quotes';
     try {
         const response = await fetch(apiUrl);
         apiQuotes = await response.json();
